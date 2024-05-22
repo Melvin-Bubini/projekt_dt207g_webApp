@@ -1,50 +1,68 @@
-<div>
-    <h2>Menu Items</h2>
-    <ul>
-        <li *ngFor="let item of menuItemList">
-            {{ item.name }} - {{ item.description }} - {{ item.price }}
-            <button (click)="selectMenuItem(item)">Edit</button>
-            <button (click)="deleteMenuItem(item._id)">Delete</button>
-        </li>
-    </ul>
-</div>
+<main>
 
-<div>
-    <h2>Add New Menu Item</h2>
-    <form (ngSubmit)="addMenuItem()">
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" [(ngModel)]="newMenuItem.name" name="name" required>
-        </div>
-        <div>
-            <label for="description">Description:</label>
-            <input type="text" id="description" [(ngModel)]="newMenuItem.description" name="description" required>
-        </div>
-        <div>
-            <label for="price">Price:</label>
-            <input type="number" id="price" [(ngModel)]="newMenuItem.price" name="price" required>
-        </div>
-        <button type="submit">Add Menu Item</button>
-    </form>
-</div>
+    <div class="formContainer">
+        <h2>Lägg ett nytt fika</h2>
+        <form (ngSubmit)="addMenuItem()">
+            <div>
+                <label for="name">Namn:</label>
+                <input type="text" id="name" [(ngModel)]="newMenuItem.name" name="name" required>
+            </div>
+            <div>
+                <label for="description">Beskrivning:</label>
+                <input type="text" id="description" [(ngModel)]="newMenuItem.description" name="description" required>
+            </div>
+            <div>
+                <label for="price">Pris:</label>
+                <input type="text" id="price" [(ngModel)]="newMenuItem.price" name="price" required>
+            </div>
+            <button class="addBtn" type="submit">Lägg till</button>
 
-<div *ngIf="selectedMenuItem">
-    <h2>Edit Menu Item</h2>
-    <form (ngSubmit)="updateMenuItem()">
-        <div>
-            <label for="edit-name">Name:</label>
-            <input type="text" id="edit-name" [(ngModel)]="selectedMenuItem.name" name="edit-name" required>
-        </div>
-        <div>
-            <label for="edit-description">Description:</label>
-            <input type="text" id="edit-description" [(ngModel)]="selectedMenuItem.description" name="edit-description"
-                required>
-        </div>
-        <div>
-            <label for="edit-price">Price:</label>
-            <input type="number" id="edit-price" [(ngModel)]="selectedMenuItem.price" name="edit-price" required>
-        </div>
-        <button type="submit">Update Menu Item</button>
-        <button type="button" (click)="selectedMenuItem = null">Cancel</button>
-    </form>
-</div>
+        </form>
+    </div>
+
+    <div class="formContainer" *ngIf="selectedMenuItem">
+        <h2>Ändra ett fika</h2>
+        <form (ngSubmit)="updateMenuItem()">
+            <div>
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" [(ngModel)]="selectedMenuItem.name" name="edit-name" required>
+            </div>
+            <div>
+                <label for="edit-description">Description:</label>
+                <input type="text" id="edit-description" [(ngModel)]="selectedMenuItem.description"
+                    name="edit-description" required>
+            </div>
+            <div>
+                <label for="edit-price">Price:</label>
+                <input type="number" id="edit-price" [(ngModel)]="selectedMenuItem.price" name="edit-price" required>
+            </div>
+            <button class="addBtn" type="submit">Uppdatera</button>
+            <button class="addBtn" type="button" (click)="selectedMenuItem = null">Avbryt</button>
+        </form>
+    </div>
+
+    <div id="tableContainer">
+        <h2>Nuvarande meny</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td>Namn</td>
+                    <td>Beskrivning</td>
+                    <td>Pris</td>
+                    <td>Ändra</td>
+                    <td>Radera</td>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of menuItemList">
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.description }}</td>
+                    <td>{{ item.price }}</td>
+                    <td><button class="tableBtn" (click)="selectMenuItem(item)">Ändra</button></td>
+                    <td><button class="tableBtn" (click)="deleteMenuItem(item._id)">Radera</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</main>

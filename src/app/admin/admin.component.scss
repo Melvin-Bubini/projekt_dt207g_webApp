@@ -1,0 +1,142 @@
+@use '../../styles'; // Inkludera styles.scss
+
+
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #f3edec;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    place-items: center;
+    overflow: hidden;
+    font-family: styles.$font-style;
+
+}
+
+main {
+    @include styles.center-element;
+}
+
+
+// FORMULÄRETS STYLES
+
+.formContainer {
+    margin: 2em auto;
+    position: relative;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #dfe2e4;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+
+    label,
+    input,
+    button {
+        display: block;
+        width: 100%;
+        padding: 0;
+        border: none;
+        outline: none;
+        box-sizing: border-box;
+    }
+
+
+}
+
+.addBtn {
+    color: white;
+    margin-top: 20px;
+    background: #7e2400;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+label {
+    margin-bottom: 4px;
+    @include styles.h3-styles;
+}
+
+label:nth-of-type(2) {
+    margin-top: 12px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+input {
+    background: #ecf0f3;
+    padding: 10px;
+    padding-left: 20px;
+    height: 2em;
+    font-size: 1.2em;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.addBtn:hover {
+    box-shadow: none;
+    cursor: pointer;
+    color: black;
+}
+
+
+// TABELLEN STYLES
+#tableContainer {
+    @include styles.center-element;
+margin-top: 2em;
+}
+
+table {
+    margin: 0 ;
+    border-collapse: collapse;
+    width: 50%;
+    background: #dfe2e4;
+    border-radius: 20px;
+
+}
+
+thead td {
+    text-decoration: underline;
+    font-weight: 600;
+    padding: 0.5em;
+}
+
+tbody td {
+    border-bottom: solid 1px;
+    padding: 0.5em;
+}
+
+tbody tr {
+    margin-bottom: 1em;
+}
+
+.tableBtn {
+    padding: 0.5em;
+    color: white;
+    background: #7e2400;
+    white-space: nowrap;
+    border-radius: 20px;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+    border: none;
+    outline: none;
+    box-shadow: none;
+
+}
+
+.tableBtn:hover {
+    cursor: pointer;
+    color: black;
+}
