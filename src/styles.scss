@@ -3,9 +3,8 @@
 // VARIABLER
 $line-height: 150%;
 $font-style: Verdana, sans-serif;
-$bar-color: #fff;
-$ball-color: #fff;
 $link-color: rgb(0, 0, 255);
+$btn-color: #2c1a08;
 
 //Body
 body {
@@ -19,12 +18,12 @@ body {
 }
 
 
-$main-color: #002f5f;
+$main-color: #413121;
 $text-color: black;
 $background-color: #ffffff;
 
 
-$main-color-dark: #002f5f;
+$main-color-dark: #413121;
 $text-color-dark: lighten($text-color, 99%);
 $background-color-dark: darken($background-color, 40%);
 

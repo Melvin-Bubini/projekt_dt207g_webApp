@@ -1,0 +1,52 @@
+@use '../../styles'; // Inkludera styles.scss
+
+// Footer
+footer {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+
+    div {
+        margin: 0 3px;
+    }
+}
+
+.footer-container {
+    display: flex; /* Använd flexbox */
+    justify-content: center; /* Centrera innehållet horisontellt */
+}
+
+.iconText:hover {
+    text-decoration: none;
+
+}
+
+.iconText {
+    color: styles.$link-color;
+    margin-left: 3px;
+
+}
+
+.btn {
+    padding: 0.25em;
+    border: 2px solid rgb(0, 0, 0);
+    white-space: nowrap;
+    border-radius: 7px;
+    background-color: white;
+    margin-bottom: 1px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: black;
+}
+
+
+footer p {
+    margin: 0;
+    font-weight: 600;
+    margin-top: 10px;
+    color: white;
+}

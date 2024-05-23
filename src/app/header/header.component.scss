@@ -1,0 +1,178 @@
+@use '../../styles'; // Inkludera styles.scss
+/* HEADER STYLES*/
+
+/* STÖRRE SKÄRMAR */
+header {
+
+    #headerDiv {
+        display: flex;
+        /* Använd flexbox för att placera elementen bredvid varandra */
+        align-items: center;
+        /* Centrera vertikalt */
+    }
+
+    #bigScreenNav ul {
+        display: flex;
+        /* Använd flexbox för att placera länkarna bredvid varandra */
+        list-style-type: none;
+        /* Ta bort punktlistans punkter */
+        padding: 0;
+        /* Ta bort inre utfyllnad */
+    }
+
+    #bigScreenNav ul li {
+        margin-right: 20px;
+        /* Lite utrymme mellan länkarna */
+    }
+
+    display: flex;
+    justify-content: space-between;
+    /* Jämnt avstånd mellan elementen */
+    align-items: center;
+    /* Centrera vertikalt */
+    padding: 10px;
+    /* Lite utrymme runt elementen */
+}
+
+#open-menu {
+    display: none;
+}
+
+#nav-menu {
+    display: none;
+}
+
+#logo {
+    width: 5em;
+}
+
+#logo-text {
+    color: white;
+    text-decoration: none;
+    font-family: Bodoni\ 72;
+}
+
+
+.menyLänkar {
+    color: styles.$text-color-dark;
+    @include styles.h2-styles;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.menyLänkar:hover,
+.menyLänkar.current {
+    cursor: pointer;
+    border-bottom: solid white 3px;
+}
+
+
+// --------------------------------------------------------------
+
+/*menyknapp för att öppna menyn*/
+
+#open-menu {
+    margin-left: auto;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    border: solid white 2px;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+.menu-btn .menu-text {
+    color: white;
+    display: inline-block;
+}
+
+.menu-btn:hover {
+    box-shadow: 0 0px 5px white;
+}
+
+.menu-icon {
+    margin-right: 10Px;
+}
+
+.bars {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+}
+
+/*menyknapp för stäng*/
+.close {
+    padding: 10px 15px;
+}
+
+/*roterar två streck till ett kryss*/
+.cross1 {
+    width: 25px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 5px;
+}
+
+.cross2 {
+    width: 25px;
+    transform: rotate(135deg);
+    position: relative;
+    top: -3px;
+}
+
+/* MOBILLÄGE */
+@media screen and (max-width: 900px) {
+
+    #bigScreenList {
+        display: none;
+    }
+
+    #open-menu {
+        display: flex;
+    }
+
+    nav {
+        box-shadow: 0 0px 10px white;
+        font-size: 26px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        display: none;
+        z-index: 1000;
+        width: 50%;
+    }
+
+    nav ul {
+        width: 100%;
+        list-style-type: none;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    nav li {
+        width: 100%;
+        margin-top: 1em;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        @include styles.p-styles;
+    }
+
+    nav a:hover,
+    nav a.current {
+        cursor: pointer;
+        color: white;
+        border-bottom: solid white 3px;
+
+    }
+}

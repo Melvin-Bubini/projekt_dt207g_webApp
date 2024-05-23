@@ -3,6 +3,8 @@ import { MenuItems } from '../model/menu-items';
 import { MenuItemsService } from '../services/menu-items.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-admin',
@@ -15,47 +17,66 @@ export class AdminComponent implements OnInit {
   menuItemList: MenuItems[] = [];
   newMenuItem: MenuItems = { name: '', description: '', price: 0 };
   selectedMenuItem: MenuItems | null = null;
+  showMenu: boolean = false;
 
-  constructor(private menuitemservice: MenuItemsService) { }
+  constructor(private menuitemservice: MenuItemsService, private router: Router) { }
 
   ngOnInit() {
-    this.menuitemservice.getMenuItems().subscribe(data => {
-      this.menuItemList = data;
-    })
+    this.loadMenuItems();
+  }
+
+  loadMenuItems() {
+    this.menuitemservice.getMenuItems().subscribe({
+      next: (data) => {
+        this.menuItemList = data;
+      },
+      error: (error) => {
+        console.error('Error loading menu items', error);
+        if (error.status === 401 || error.status === 403) {
+          this.router.navigate(['/login']);
+        }
+      }
+    });
   }
 
   addMenuItem() {
-    this.menuitemservice.addMenuItem(this.newMenuItem).subscribe(
-      response => {
+    this.menuitemservice.addMenuItem(this.newMenuItem).subscribe({
+      next: response => {
         console.log('Menu item added successfully', response);
         this.menuItemList.push(response); // Uppdatera listan med det nya menyalternativet
         this.newMenuItem = { name: '', description: '', price: 0 }; // Återställ formuläret
       },
-      error => {
+      error: error => {
         console.error('Error adding menu item', error);
       }
-    );
+    });
   }
+  
 
   selectMenuItem(menuItem: MenuItems) {
     if (menuItem._id) {
-      this.menuitemservice.getMenuItemById(menuItem._id).subscribe(
-        response => {
+      this.menuitemservice.getMenuItemById(menuItem._id).subscribe({
+        next: response => {
           this.selectedMenuItem = response;
         },
-        error => {
+        error: error => {
           console.error('Error getting menu item by ID', error);
         }
-      );
+      });
     } else {
       console.error('Error: ID is undefined');
     }
   }
 
+  toogleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+  
+
   updateMenuItem() {
     if (this.selectedMenuItem && this.selectedMenuItem._id) {
-      this.menuitemservice.updateMenuItem(this.selectedMenuItem._id, this.selectedMenuItem).subscribe(
-        response => {
+      this.menuitemservice.updateMenuItem(this.selectedMenuItem._id, this.selectedMenuItem).subscribe({
+        next: response => {
           console.log('Menu item updated successfully', response);
           const index = this.menuItemList.findIndex(item => item._id === response._id);
           if (index !== -1) {
@@ -63,25 +84,27 @@ export class AdminComponent implements OnInit {
           }
           this.selectedMenuItem = null; // Återställ det valda objektet
         },
-        error => {
+        error: error => {
           console.error('Error updating menu item', error);
         }
-      );
+      });
     }
   }
+  
 
   deleteMenuItem(id: string | undefined) {
     if (id) {
-      this.menuitemservice.deleteMenuItem(id).subscribe(
-        () => {
+      this.menuitemservice.deleteMenuItem(id).subscribe({
+        next: () => {
           console.log('Menu item deleted successfully');
           this.menuItemList = this.menuItemList.filter(item => item._id !== id); // Ta bort objektet från listan
         },
-        error => {
+        error: error => {
           console.error('Error deleting menu item', error);
         }
-      );
+      });
     }
   }
+  
 
 }

@@ -20,6 +20,12 @@
         </form>
     </div>
 
+    <div>
+        <button class="tableBtn" (click)="toogleMenu()">
+            {{ showMenu ? "Dölj nuvarande meny" : "Visa nuvarande meny" }}
+        </button>
+    </div>
+
     <div class="formContainer" *ngIf="selectedMenuItem">
         <h2>Ändra ett fika</h2>
         <form (ngSubmit)="updateMenuItem()">
@@ -41,7 +47,7 @@
         </form>
     </div>
 
-    <div id="tableContainer">
+    <div id="tableContainer" *ngIf="showMenu">
         <h2>Nuvarande meny</h2>
         <table>
             <thead>

@@ -92,53 +92,6 @@ input {
     color: black;
 }
 
-
-// TABELLEN STYLES
-#tableContainer {
-    @include styles.center-element;
-    margin: 2em 0px;
-}
-
-table {
-    margin: 0;
-    border-collapse: collapse;
-    width: 50%;
-    background: #dfe2e4;
-    border-radius: 20px;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-
-}
-
-thead td {
-    text-decoration: underline;
-    font-weight: 600;
-    padding: 0.5em;
-}
-
-tbody td {
-    border-bottom: solid 1px;
-    padding: 0.5em;
-}
-
-tbody tr {
-    margin-bottom: 1em;
-}
-
-.tableBtn {
-    padding: 0.5em;
-    color: white;
-    white-space: nowrap;
-    border-radius: 20px;
-    font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
-    transition: 0.5s;
-    border: none;
-    outline: none;
-    box-shadow: none;
-
-}
-
-.tableBtn:hover {
-    cursor: pointer;
-    color: black;
+.error-message {
+    color: red;
 }
