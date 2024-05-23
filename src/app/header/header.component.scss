@@ -34,6 +34,21 @@ header {
     /* Lite utrymme runt elementen */
 }
 
+/* Stil för din fast header */
+#myHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: background-color 0.3s; /* Animerad övergång för bakgrundsfärgen */
+    z-index: 1000; /* Säkerställ att headern visas över allt annat */
+}
+
+/* Stil för din header när den är genomskinlig */
+#myHeader.transparent {
+    background-color: transparent;
+}
+
 #open-menu {
     display: none;
 }

@@ -1,2 +1,148 @@
 @use '../../styles'; // Inkludera styles.scss
 
+main {
+    position: relative;
+
+    #overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 2; // Placera över bilden
+        color: white; 
+    }
+
+    
+}
+
+#imageContainer {
+    z-index: 1;
+    background-image: url(/assets/pictures/hero-image.webp);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+
+#goToMenu {
+    color: white;
+    letter-spacing: 1px;
+    background-color: styles.$btn-color;
+    border-radius: 30px;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all .5s;
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.5s;
+}
+#goToMenu:hover {
+    cursor: pointer;
+    color: black;
+}
+
+/* Media Queries */
+@media (max-width: 480px) {
+    #imageContainer img {
+        src: url('/assets/pictures/bakery_small.webp');
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    #imageContainer img {
+        src: url('/assets/pictures/bakery_mid.webp');
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    #imageContainer img {
+        src: url('/assets/pictures/bakery_midBig.webp');
+    }
+}
+
+@media (min-width: 1025px) {
+    #imageContainer img {
+        src: url('/assets/pictures/bakery_big.webp');
+    }
+}
+
+
+// MENYNS STYLES
+
+
+#menuContainer {
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; // Mellanrum mellan boxarna
+}
+
+.div-box {
+    background-color: styles.$btn-color; // Bakgrundsfärg för boxarna
+    border: none;    // Kantlinje för boxarna
+    border-radius: 8px;        // Rundade hörn
+    padding: 20px;             // Inre marginaler
+    margin: 10px;              // Yttre marginaler
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Skugga för boxarna
+    flex: 1 1 calc(33.33% - 40px); // Flex-inställning för tre kolumner
+    box-sizing: border-box;    // Inkludera kantlinje i bredd/height
+    text-align: left;          // Vänsterjustera texten
+}
+
+
+// Pseudo-element för att centrera sista boxen om antalet är ojämnt
+#menu::after {
+    content: '';
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+}
+
+
+// OM CAFET STYLES
+
+#aboutContainer {
+    background-color: #1d1104;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    padding: 30px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 50%;
+    height: auto;
+}
+
+.about-text {
+    flex: 2;
+    text-align: left;
+    width: 50%;
+}
+
+#aboutHeader h2 {
+    margin-bottom: 10px;
+}
+
+#aboutText p {
+    margin: 0;
+}

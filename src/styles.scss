@@ -2,9 +2,17 @@
 
 // VARIABLER
 $line-height: 150%;
-$font-style: Verdana, sans-serif;
+$font-style: Poppins, sans-serif;
 $link-color: rgb(0, 0, 255);
 $btn-color: #2c1a08;
+$main-color: #413121;
+$text-color: white;
+$background-color: #ffffff;
+
+
+$main-color-dark: #413121;
+$text-color-dark: lighten($text-color, 99%);
+$background-color-dark: darken($background-color, 40%);
 
 //Body
 body {
@@ -15,17 +23,11 @@ body {
     overflow-x: hidden;
     line-height: 150%;
     font-family: $font-style;
+    background-color: $main-color;
 }
 
 
-$main-color: #413121;
-$text-color: black;
-$background-color: #ffffff;
 
-
-$main-color-dark: #413121;
-$text-color-dark: lighten($text-color, 99%);
-$background-color-dark: darken($background-color, 40%);
 
 @mixin center-element {
     display: flex;
@@ -67,25 +69,24 @@ $background-color-dark: darken($background-color, 40%);
 
 
 header,
-    footer,
-    button,
-    nav {
-        background-color: $main-color;
-    }
+footer,
+button,#nav-menu {
+    background-color: $btn-color;
+}
 
-    #mainContainer {
-        background-color: $background-color;
-    }
+#mainContainer {
+    background-color: $background-color;
+}
 
-    p,
-    h1,
-    h2,
-    li,
-    ul,
-    span,
-    label,
-    #syllabusLink,
-    table,
-    button {
-        color: $text-color;
-    }
+p,
+h1,
+h2,
+li,
+ul,
+span,
+label,
+table,
+button,
+div {
+    color: $text-color;
+}

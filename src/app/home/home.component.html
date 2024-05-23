@@ -1,5 +1,46 @@
 <main>
     <div id="imageContainer">
-        <img alt="hero-image" srcset="/assets/pictures/cheesecake.webp">
+        <div id="overlay">
+            <h1>Bakat med kärlek</h1>
+            <a id="goToMenu" href="#menu">Se vår meny</a>
+        </div>
     </div>
+
+    <section id="menuContainer">
+        <h1>MENY</h1>
+        <div id="menu">
+
+            <div class="div-box" *ngFor="let item of menuItemList">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.price }} kr</p>
+                <p>{{ item.description }}</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="aboutContainer">
+        <div class="about-image">
+            <picture>
+                <img src="/assets/pictures/baking.webp" alt="baking">
+            </picture>
+        </div>
+        <div class="about-text">
+            <div id="aboutHeader">
+                <h2>Om oss</h2>
+            </div>
+            <div id="aboutText">
+                <p>Gretas Lilla Fik är ett charmigt café i Kungsängen, grundat av hemmabagaren Greta Palm. Inspirerad av sin
+                    farmors recept, erbjuder Greta ett brett utbud av hembakade godsaker med fokus på allergivänliga
+                    alternativ.
+                    Caféet är känt för sin varma och välkomnande atmosfär, där varje gäst känner sig som hemma. Här kan man
+                    njuta av allt från klassiska kanelbullar till kreativa lunchrätter, alltid bakade med kärlek och
+                    omtanke.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    
+
 </main>

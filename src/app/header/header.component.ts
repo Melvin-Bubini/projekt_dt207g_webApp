@@ -11,7 +11,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   openBtn: HTMLElement | null = null;
-closeBtn: HTMLElement | null = null;
+  closeBtn: HTMLElement | null = null;
 
   constructor() { }
 
@@ -22,6 +22,30 @@ closeBtn: HTMLElement | null = null;
     if (this.openBtn && this.closeBtn) {
       this.openBtn.addEventListener("click", this.toggleMenu);
       this.closeBtn.addEventListener("click", this.toggleMenu);
+    }
+
+    // Hämta header-elementet
+    const header: HTMLElement | null = document.getElementById("myHeader");
+
+    if (header) {
+      // Hämta den nuvarande positionen på sidan när du laddar sidan
+      let prevScrollPos: number = window.pageYOffset;
+
+      // Lägg till en händelselyssnare för när du scrollar
+      window.onscroll = function() {
+        const currentScrollPos: number = window.pageYOffset;
+
+        // Om du scrollar uppåt eller är högst upp på sidan, gör headern genomskinlig
+        if (prevScrollPos > currentScrollPos || currentScrollPos === 0) {
+          header.classList.remove("transparent");
+        } else {
+          // Annars, när du scrollar neråt, gör headern fast och genomskinlig
+          header.classList.add("transparent");
+        }
+
+        // Uppdatera den tidigare scrollpositionen för nästa scrollhändelse
+        prevScrollPos = currentScrollPos;
+      }
     }
   }
 
@@ -38,4 +62,6 @@ closeBtn: HTMLElement | null = null;
       }
     }
   }
+
+  
 }

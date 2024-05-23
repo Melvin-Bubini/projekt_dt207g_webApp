@@ -2,20 +2,54 @@
 
 // Footer
 footer {
-    bottom: 0;
-    left: 0;
+   
     width: 100%;
-    padding: 10px 0;
-    text-align: center;
+    padding: 20px;
+    text-align: left;
 
-    div {
-        margin: 0 3px;
-    }
+    
 }
 
 .footer-container {
-    display: flex; /* Använd flexbox */
-    justify-content: center; /* Centrera innehållet horisontellt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Mellanrum mellan varje div */
+}
+#headingText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+#subHeadingText {
+    font-family: cursive;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#description {
+    text-align: center;
+    width: 50%;
+    font-family: cursive;
+
+}
+
+.footer-container div {
+    margin-bottom: 10px;
+    /* Mellanrum mellan varje div */
+    text-align: left;
+    width: 100%;
+}
+
+.footer-container .icons {
+    vertical-align: middle;
+    margin-right: 10px;
+    /* Mellanrum mellan ikonen och texten */
 }
 
 .iconText:hover {
@@ -24,8 +58,10 @@ footer {
 }
 
 .iconText {
-    color: styles.$link-color;
+    color: styles.$text-color;
     margin-left: 3px;
+    vertical-align: middle;
+    font-family: styles.$font-style;
 
 }
 
