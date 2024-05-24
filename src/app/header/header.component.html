@@ -1,16 +1,16 @@
 <header id="myHeader">
     <div id="headerDiv">
-        <a routerLink="/home" href="/home"><img id="logo" src="./assets/icons/standardLogo.svg" alt="Logga"></a>
-        <a id="logo-text" routerLink="/home" href="/home">
+        <a (click)="scrollToElement('imageContainer')"><img id="logo" src="./assets/icons/standardLogo.svg" alt="Logga"></a>
+        <a id="logo-text" (click)="scrollToElement('imageContainer')">
             <h3>Gretas lilla fik</h3>
         </a>
     </div>
 
     <nav id="bigScreenNav">
         <ul id="bigScreenList">
-            <li><a class="menyLänkar" routerLink="/home" href="/home" routerLinkActive="current">HEM</a></li>
-            <li><a class="menyLänkar" routerLink="/courses" href="/courses" routerLinkActive="current">MENY</a></li>
-            <li><a class="menyLänkar" routerLink="/ramschema" href="/ramschema" routerLinkActive="current">OM OSS</a></li>
+            <li><a class="menyLänkar" (click)="scrollToElement('imageContainer')" routerLinkActive="current">HEM</a></li>
+            <li><a class="menyLänkar"  (click)="scrollToElement('menuContainer')" routerLinkActive="current">MENY</a></li>
+            <li><a class="menyLänkar" (click)="scrollToElement('aboutContainer')" routerLinkActive="current">OM OSS</a></li>
             <li><a class="menyLänkar" routerLink="/login" href="/login" routerLinkActive="current"><img src="/assets/icons/user.png" alt="login-icon"></a></li>
         </ul>
     </nav>
@@ -32,9 +32,9 @@
             <span class="menu-text">Stäng</span>
         </button>
         <ul>
-            <li><a routerLink="/home" href="/home" routerLinkActive="current">Startidan</a></li>
-            <li><a routerLink="/courses" href="/courses" routerLinkActive="current">Kurser</a></li>
-            <li><a routerLink="/ramschema" href="/ramschema" routerLinkActive="current">Ramschema</a></li>
+            <li><a class="menyLänkar" (click)="scrollToElement('imageContainer')" routerLinkActive="current">HEM</a></li>
+            <li><a class="menyLänkar"  (click)="scrollToElement('menuContainer')" routerLinkActive="current">MENY</a></li>
+            <li><a class="menyLänkar" (click)="scrollToElement('aboutContainer')" routerLinkActive="current">OM OSS</a></li>
             <li><a class="menyLänkar" routerLink="/login" href="/login" routerLinkActive="current"><img src="/assets/icons/user.png" alt="login-icon"></a></li>
         </ul>
     </nav>

@@ -1,4 +1,5 @@
 <main>
+    <div id="margin"></div>
 
     <div class="formContainer">
         <h2>Lägg ett nytt fika</h2>
@@ -24,6 +25,10 @@
         <button class="tableBtn" (click)="toogleMenu()">
             {{ showMenu ? "Dölj nuvarande meny" : "Visa nuvarande meny" }}
         </button>
+    </div>
+
+    <div>
+        <button id="logout" (click)="logout()">Logga ut</button>
     </div>
 
     <div class="formContainer" *ngIf="selectedMenuItem">

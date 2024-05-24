@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { MenuItems } from '../model/menu-items';
@@ -16,6 +16,9 @@ export class HomeComponent implements OnInit {
 
   // Properies 
   menuItemList: MenuItems[] = [];
+  @ViewChild('imageContainer', {static: false, read: ElementRef}) imageContainer!: ElementRef;
+  @ViewChild('menuContainer', {static: false, read: ElementRef}) menuContainer!: ElementRef;
+  @ViewChild('aboutContainer', {static: false, read: ElementRef}) aboutContainer!: ElementRef;
 
   constructor( private menuitemsservice: MenuItemsService, private router: Router) {}
 
@@ -36,5 +39,12 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+  scrollToMenu(): void {
+    if (this.menuContainer) {
+      this.menuContainer.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 
 }

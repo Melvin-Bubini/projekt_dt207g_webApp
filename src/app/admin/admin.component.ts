@@ -4,6 +4,7 @@ import { MenuItemsService } from '../services/menu-items.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LogoutService } from '../services/logout.service';
 
 
 @Component({
@@ -19,10 +20,14 @@ export class AdminComponent implements OnInit {
   selectedMenuItem: MenuItems | null = null;
   showMenu: boolean = false;
 
-  constructor(private menuitemservice: MenuItemsService, private router: Router) { }
+  constructor(private menuitemservice: MenuItemsService, private logoutservice: LogoutService, private router: Router) { }
 
   ngOnInit() {
     this.loadMenuItems();
+  }
+
+  logout(): void {
+    this.logoutservice.logout();
   }
 
   loadMenuItems() {

@@ -13,7 +13,14 @@ export class HeaderComponent implements OnInit {
   openBtn: HTMLElement | null = null;
   closeBtn: HTMLElement | null = null;
 
-  constructor() { }
+  constructor() {}
+
+  scrollToElement(elementId: string): void {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
   ngOnInit(): void {
     this.openBtn = document.getElementById("open-menu");
@@ -62,6 +69,7 @@ export class HeaderComponent implements OnInit {
       }
     }
   }
+
 
   
 }

@@ -67,6 +67,11 @@ header {
     font-family: Bodoni\ 72;
 }
 
+#logo-text:hover, #logo:hover {
+    cursor: pointer;
+
+}
+
 
 .menyLänkar {
     color: styles.$text-color-dark;

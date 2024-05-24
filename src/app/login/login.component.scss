@@ -27,16 +27,20 @@ button {
 
 // FORMULÄRETS STYLES
 
+#margin {
+    margin-top: 5em;
+}
+
 .formContainer {
-    margin: 2em auto;
+    margin: 6em auto;
     position: relative;
     width: 350px;
     height: 500px;
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #dfe2e4;
-    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+    background: #814300;
+    box-shadow: 9px -10px 20px black;
 
     label,
     input,
@@ -59,7 +63,7 @@ button {
     border-radius: 20px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    box-shadow: 9px -10px 20px black;
     transition: 0.5s;
 }
 

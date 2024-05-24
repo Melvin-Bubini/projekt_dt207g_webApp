@@ -1,12 +1,12 @@
 <main>
-    <div id="imageContainer">
+    <div id="imageContainer" #imageContainer>
         <div id="overlay">
             <h1>Bakat med kärlek</h1>
-            <a id="goToMenu" href="#menu">Se vår meny</a>
+            <a id="goToMenu" (click)="scrollToMenu()">Se vår meny</a>
         </div>
     </div>
 
-    <section id="menuContainer">
+    <section id="menuContainer" #menuContainer>
         <h1>MENY</h1>
         <div id="menu">
 
@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <div id="aboutContainer">
+    <div id="aboutContainer" #aboutContainer>
         <div class="about-image">
             <picture>
                 <img src="/assets/pictures/baking.webp" alt="baking">
