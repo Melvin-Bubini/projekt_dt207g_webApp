@@ -3,14 +3,14 @@ import { MenuItems } from '../model/menu-items';
 import { MenuItemsService } from '../services/menu-items.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { LogoutService } from '../services/logout.service';
 
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss'
 })

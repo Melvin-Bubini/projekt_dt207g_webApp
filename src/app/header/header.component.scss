@@ -64,7 +64,9 @@ header {
 #logo-text {
     color: white;
     text-decoration: none;
-    font-family: Bodoni\ 72;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+
 }
 
 #logo-text:hover, #logo:hover {
@@ -99,7 +101,7 @@ header {
     display: flex;
     align-items: center;
     padding: 8px 15px;
-    border: solid white 2px;
+    border: none;
     cursor: pointer;
     margin-right: 5%;
 }
@@ -109,18 +111,11 @@ header {
     display: inline-block;
 }
 
-.menu-btn:hover {
-    box-shadow: 0 0px 5px white;
-}
-
-.menu-icon {
-    margin-right: 10Px;
-}
 
 .bars {
     display: block;
-    width: 20px;
-    height: 3px;
+    width: 30px;
+    height: 5px;
     background-color: white;
     margin: 5px 0;
 }
@@ -128,21 +123,6 @@ header {
 /*menyknapp för stäng*/
 .close {
     padding: 10px 15px;
-}
-
-/*roterar två streck till ett kryss*/
-.cross1 {
-    width: 25px;
-    transform: rotate(45deg);
-    position: relative;
-    top: 5px;
-}
-
-.cross2 {
-    width: 25px;
-    transform: rotate(135deg);
-    position: relative;
-    top: -3px;
 }
 
 /* MOBILLÄGE */
@@ -157,7 +137,6 @@ header {
     }
 
     nav {
-        box-shadow: 0 0px 10px white;
         font-size: 26px;
         position: absolute;
         right: 0;

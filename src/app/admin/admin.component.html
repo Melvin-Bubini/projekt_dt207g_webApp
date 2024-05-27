@@ -17,7 +17,9 @@
                 <input type="text" id="price" [(ngModel)]="newMenuItem.price" name="price" required>
             </div>
             <button class="addBtn" type="submit">Lägg till</button>
-
+            <div>
+                <button id="logout" (click)="logout()">Logga ut</button>
+            </div>
         </form>
     </div>
 
@@ -25,10 +27,6 @@
         <button class="tableBtn" (click)="toogleMenu()">
             {{ showMenu ? "Dölj nuvarande meny" : "Visa nuvarande meny" }}
         </button>
-    </div>
-
-    <div>
-        <button id="logout" (click)="logout()">Logga ut</button>
     </div>
 
     <div class="formContainer" *ngIf="selectedMenuItem">
