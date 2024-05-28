@@ -87,7 +87,7 @@ main {
 #menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px; // Mellanrum mellan boxarna
 }
 
@@ -98,15 +98,34 @@ main {
     padding: 20px;             // Inre marginaler
     margin: 10px;              // Yttre marginaler
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Skugga för boxarna
-    flex: 1 1 calc(33.33% - 40px); // Flex-inställning för tre kolumner
     box-sizing: border-box;    // Inkludera kantlinje i bredd/height
     text-align: left;          // Vänsterjustera texten
-
+    flex: 1 1 calc(25% - 20px); // Flex-inställning för fyra kolumner med marginal
+    min-width: 200px; // Minimum bredd för varje box
+    
     h2 {
-        color: rgb(255, 136, 0);
-        font-family: 'Times New Roman', Times, serif;
+      color: rgb(255, 136, 0);
+      font-family: 'Times New Roman', Times, serif;
     }
-}
+  }
+  
+  @media (max-width: 1200px) {
+    .div-box {
+      flex: 1 1 calc(33.33% - 20px); // Tre kolumner
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .div-box {
+      flex: 1 1 calc(50% - 20px); // Två kolumner
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .div-box {
+      flex: 1 1 100%; // En kolumn
+    }
+  }
 
 
 // Pseudo-element för att centrera sista boxen om antalet är ojämnt
@@ -134,7 +153,7 @@ main {
 }
 
 .about-image img {
-    width: 50%;
+    width: 70%;
     height: auto;
 }
 

@@ -63,6 +63,7 @@ export class AdminComponent implements OnInit {
       this.menuitemservice.getMenuItemById(menuItem._id).subscribe({
         next: response => {
           this.selectedMenuItem = response;
+          this.showMenu = false;
         },
         error: error => {
           console.error('Error getting menu item by ID', error);

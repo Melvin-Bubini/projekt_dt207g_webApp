@@ -1,27 +1,34 @@
 # ProjektDt207gWebApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+# Beskrivning
+Min Angular App är en webbapplikation byggd med Angular som tillåter användare att hantera en meny för en restaurang. Användare kan lägga till nya menyalternativ, redigera befintliga och ta bort dem.
 
-## Development server
+# Installation
+För att köra den här applikationen lokalt på din dator behöver du följande:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Node.js och npm: Se till att du har Node.js installerat på din dator. Du kan ladda ner och installera den från Node.js officiella webbplats.
 
-## Code scaffolding
+Angular CLI: Installera Angular CLI globalt genom att köra följande kommando i terminalen:
+npm install -g @angular/cli
+Klona repository: Klona detta repository till din lokala maskin genom att köra följande kommando i terminalen:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+git clone <repository-url>
+Installera dependencies: Navigera till den klonade mappen och installera projektets dependencies genom att köra följande kommando:
 
-## Build
+cd min-angular-app
+npm install
+Starta applikationen: När alla dependencies har installerats, starta applikationen genom att köra följande kommando:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng serve
+Det här kommandot bygger applikationen och startar en lokal utvecklingsserver. Öppna sedan din webbläsare och navigera till http://localhost:4200/ för att se applikationen i åtgärd.
 
-## Running unit tests
+# Användning
+När applikationen är igång kan användare interagera med den genom följande steg:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Visa Meny: När du öppnar applikationen ser du en lista över menyalternativ för restaurangen. Du kan lägga till nya menyalternativ, redigera befintliga eller ta bort dem.
 
-## Running end-to-end tests
+Lägga till Menyalternativ: Klicka på knappen "Lägg till" och fyll i formuläret med namn, beskrivning och pris för det nya menyalternativet.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Redigera Menyalternativ: Klicka på "Ändra" bredvid ett befintligt menyalternativ för att ändra dess information.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ta bort Menyalternativ: Klicka på "Ta bort" bredvid ett befintligt menyalternativ för att radera det från menyn.

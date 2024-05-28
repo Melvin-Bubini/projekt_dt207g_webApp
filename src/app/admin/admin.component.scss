@@ -32,7 +32,7 @@ button {
 }
 
 .formContainer {
-    margin: 6em auto;
+    margin: 6em auto 1em;
     position: relative;
     width: 350px;
     height: 500px;
@@ -108,7 +108,8 @@ input {
 table {
     margin: 0;
     border-collapse: collapse;
-    width: 50%;
+    width: 100%; // Full bredd på små skärmar
+    max-width: 50%; // Begränsa bredden på större skärmar    
     border-radius: 20px;
     background: #814300;
     box-shadow: 9px -10px 20px black;
@@ -123,6 +124,8 @@ thead td {
 tbody td {
     border-bottom: solid 1px;
     padding: 0.5em;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
 }
 
 tbody tr {
@@ -149,3 +152,49 @@ tbody tr {
     cursor: pointer;
     color: black;
 }
+
+/* Media queries för att anpassa stilar på mindre skärmar */
+@media (max-width: 600px) {
+    table {
+      width: 100%; // Full bredd på små skärmar
+      background: transparent;
+
+    }
+  
+    thead {
+      display: none; // Dölj tabellhuvudet på små skärmar
+    }
+  
+    tbody tr {
+      display: block;
+      margin-bottom: 1em;
+      border: solid 1px;
+      border-radius: 20px;
+      background: #814300;
+      box-shadow: 9px -10px 20px black;
+    }
+  
+    tbody td {
+      display: block;
+      text-align: right;
+      padding: 0.5em;
+      border-bottom: none;
+      position: relative;
+    }
+  
+    tbody td::before {
+      content: attr(data-label); // Använd data-label attributet för att visa rubriker på små skärmar
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 0.5em;
+      font-weight: bold;
+      text-align: left;
+    }
+
+  /* Dölj specifika kolumner på små skärmar */
+  tbody td:nth-child(2), /* Description */
+  tbody td:nth-child(3) { /* Price */
+      display: none;
+  }
+  }
